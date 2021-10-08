@@ -12,7 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class C02_BeforeNotasyonu {
+public class C02_BeforeClassNotasyonu {
 
 
     // amazon sayfasina gidip 3 farkli test methodu hazirlayin
@@ -20,10 +20,7 @@ public class C02_BeforeNotasyonu {
     static WebDriver driver;
     WebElement searchBox=driver.findElement(By.id("twotabsearchtextbox"));
 
-    @AfterClass
-    public static void tearDown(){
-        driver.close();
-    }
+
 
 
     @BeforeClass
@@ -53,5 +50,8 @@ public class C02_BeforeNotasyonu {
         searchBox.sendKeys("java" + Keys.ENTER);
     }
 
-
+    @AfterClass
+    public static void tearDown(){
+        driver.close();
+    }
 }
